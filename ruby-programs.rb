@@ -121,7 +121,7 @@ puts (1..10).to_a.map {|i| fibo_series(i, cache)}
 
 # Hashes
 
-animals =  [["dogs", 4], ["cats", 3], ["dogs", 7]] 
+animals =  [["dogs", 4], ["cats", 3], ["dogs", 7]]
 
 # Output should be {"dogs"=>11, "cats"=>3}
 
@@ -154,3 +154,27 @@ end
 
 puts a.all_start_with_a?
 
+#Add a my_map() method to the Array class that behaves the same as the Array#map method.
+
+class Array
+	def my_map
+		new_arr = []
+		self.each do |ele|
+			new_arr << yield(ele)
+		end
+		new_arr
+	end
+end
+print [1, 2, 3].my_map {|x| x * 2}
+
+
+# Method Missing
+
+class Tea
+	private
+	def method_missing(method_name, *args)
+		puts "Sorry.. #{method_name}"
+	end
+end
+
+Tea.new.red_label('sweet', 'sugar')
