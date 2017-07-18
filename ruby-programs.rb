@@ -178,3 +178,13 @@ class Tea
 end
 
 Tea.new.red_label('sweet', 'sugar')
+
+# Reverse a integer without .reverse or .to_s
+x = 1234
+y = 0
+while x > 0
+	z = x % 10 #4, 3, 2, 1
+	y = (y * 10) + z #4, 43, 432, 4321
+	x = x / 10 # 123, 12, 1, 0
+end
+puts y
