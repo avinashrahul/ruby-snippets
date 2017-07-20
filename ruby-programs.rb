@@ -14,6 +14,12 @@ end
 
 my_method
 
+# my_proc = lambda {|first_name, last_name| first_name '+' last_name}
+# You can call this bt my_proc.call('Rahul', 'G') or my_proc['Rahul', 'G']
+
+# Another way is
+# my_proc = ->(first_name, last_name) {first_name '+' last_name}
+
 # Lambda - Once you have return it will come outside and execute other lines like regular ruby method
 def my_method
 	puts "Inside Method starting"
@@ -188,3 +194,15 @@ while x > 0
 	x = x / 10 # 123, 12, 1, 0
 end
 puts y
+
+# Get Index value of letter 'R' from a string
+s = "This is Awesome Rahul"
+puts s =~ /R/
+
+# Find all instances of integer from below string
+s = "This is 10 Awesome Rahul 20"
+s.to_enum(:scan, /\d+/).map {Regexp.last_match}
+
+# Grep an element from an array
+a = [2, 3, 1, 2]
+puts a.grep(2) # [2,2]
