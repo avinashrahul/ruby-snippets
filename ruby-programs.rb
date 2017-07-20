@@ -206,3 +206,7 @@ s.to_enum(:scan, /\d+/).map {Regexp.last_match}
 # Grep an element from an array
 a = [2, 3, 1, 2]
 puts a.grep(2) # [2,2]
+
+# Split all evens into didfferent array from array of numbers
+array = [1, 3, 2, 6, 9, 22]
+print array.partition {|i| i.even?} # Output - [[2, 6, 22], [1, 3, 9]]

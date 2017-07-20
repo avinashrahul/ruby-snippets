@@ -1,3 +1,11 @@
+Algorithms Neatly Explained:
+
+http://cs.usfca.edu/~galles/visualization/flash.html
+
+Ruby:
+
+[2, 1, 5, 4].sort => Ruby by default uses Quick Sort Algorithm for Sorting.
+
 Rails:
 
 namespace :admin do
