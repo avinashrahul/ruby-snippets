@@ -195,6 +195,12 @@ while x > 0
 end
 puts y
 
+# method 2 without using .reverse but using .to_s
+
+array_of_nums = 123.to_s.split(//)
+array_of_nums.inject {|a, b| b + a}.to_i
+
+
 # Get Index value of letter 'R' from a string
 s = "This is Awesome Rahul"
 puts s =~ /R/
