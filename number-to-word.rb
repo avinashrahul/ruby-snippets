@@ -19,7 +19,6 @@ class NumberToWord
     if @number_words.include?(number)
       return @number_words[number]
     elsif(100..999).include?(number)
-      #722
       number_to_hundreds(number)
     elsif(1000..9999).include?(number)
       a = @number_words[number/1000]

@@ -216,3 +216,18 @@ puts a.grep(2) # [2,2]
 # Split all evens into didfferent array from array of numbers
 array = [1, 3, 2, 6, 9, 22]
 print array.partition {|i| i.even?} # Output - [[2, 6, 22], [1, 3, 9]]
+
+#
+active = {2000 => 10, 2001 => 20}
+inactive = { 2000 => 30, 2001 => 40, 2003 => 50}
+
+## Output should be -
+# {
+# 2000 => {'active'=> 10, 'inactive'=>30},
+# 2001 => {'active'=> 20, 'inactive'=>40},
+# 2003 => {'inactive'=>50}
+# }
+
+[active.keys + inactive.keys].flatten.uniq.map {|k| { k =>  {'active' => active[k], 'inactive' => inactive[k]}.delete_if {|k, v| v.nil?}  }}.inject(&:merge)
+
+
