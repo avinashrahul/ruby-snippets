@@ -1,5 +1,4 @@
 require 'pry'
-require 'set'
 # # To get all permutations for a particular string like -
 # pets, pest, espt, sept and so on
 
@@ -18,7 +17,6 @@ def get_permutations(string)
   permutations = []
   # base case
   if string.length <= 1
-    byebug
     return permutations << string
   end
 
@@ -26,13 +24,16 @@ def get_permutations(string)
   last_char = string[-1]
 
   # recursive call: get all possible permutations for all chars except last
+
+  # permutations_of_all_chars_except_last -> output from return value above
   permutations_of_all_chars_except_last = get_permutations(all_chars_except_last)
   # put the last char in all possible positions for each of the above permutations
-
+  # permutations_of_all_chars_except_last -> ["p"]
   permutations_of_all_chars_except_last.each do |permutation_of_all_chars_except_last|
+    # all_chars_except_last -> "p", "pe", "pet" -> just used to calculate length
+    # puts all_chars_except_last
     (0..all_chars_except_last.length).each do |position|
       permutation = permutation_of_all_chars_except_last[0...position] + last_char + permutation_of_all_chars_except_last[position..-1]
-      byebug
       permutations << permutation
     end
   end
